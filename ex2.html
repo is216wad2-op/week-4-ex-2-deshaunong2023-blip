@@ -9,6 +9,13 @@
             background-color: goldenrod;
         }
 
+        #div2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: goldenrod;
+        }
+
         /* add CSS code here */
 
     </style>
@@ -24,9 +31,22 @@
     <button onclick="changeShape()">Make a change!</button>
 
     <script>
+        // variable defined outside functions is a global variable
+        // which is accessible by functions
+        let showingSquare = true;
+ 
+        function changeShape() {
         
-       // add code here
-
+            if (showingSquare) {
+                let temp = document.getElementById("div2");
+                temp.id = "div2";
+                showingSquare = false;
+            } else {
+                let temp = document.getElementById("div1");
+                temp.id = "div1";
+                showingSquare = true;
+            }
+        }
     </script>
 
 </body>
